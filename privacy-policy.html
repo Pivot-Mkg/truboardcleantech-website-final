@@ -260,64 +260,77 @@
             .index-link {
                 padding: 8px 0;
             }
+
+
+        }
+
+        @media (max-width: 900px) {
+            .policy-tab-wrapper .policy-index {
+                display: none;
+            }
+
+            .table-wrapper {
+                overflow: hidden;
+                overflow-y: scroll;
+            }
         }
     </style>
 
-   <script>
-  (function () {
-    const links = Array.from(document.querySelectorAll('.policy-index .index-link'));
-    const sections = links
-      .map(a => document.querySelector(a.getAttribute('href')))
-      .filter(Boolean);
+    <script>
+        (function () {
+            const links = Array.from(document.querySelectorAll('.policy-index .index-link'));
+            const sections = links
+                .map(a => document.querySelector(a.getAttribute('href')))
+                .filter(Boolean);
 
-    const getTopOffset = () => (window.innerWidth >= 1024 ? 300 : 80);
+            const getTopOffset = () => (window.innerWidth >= 1024 ? 300 : 80);
 
-    const activate = (id) => {
-      links.forEach(a => {
-        const match = a.getAttribute('href') === '#' + id;
-        a.classList.toggle('active', match);
-      });
-    };
+            const activate = (id) => {
+                links.forEach(a => {
+                    const match = a.getAttribute('href') === '#' + id;
+                    a.classList.toggle('active', match);
+                });
+            };
 
-    // Build an IO that respects our dynamic top offset
-    let io;
-    const buildObserver = () => {
-      if (io) io.disconnect();
-      const TOP_OFFSET = getTopOffset();
-      io = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) activate(visible.target.id);
-      }, {
-        // Active zone begins  at TOP_OFFSET from top
-        rootMargin: `-${TOP_OFFSET}px 0px -55% 0px`,
-        threshold: [0, 0.25, 0.5, 0.75, 1]
-      });
-      sections.forEach(sec => io.observe(sec));
-    };
-    buildObserver();
+            // Build an IO that respects our dynamic top offset
+            let io;
+            const buildObserver = () => {
+                if (io) io.disconnect();
+                const TOP_OFFSET = getTopOffset();
+                io = new IntersectionObserver((entries) => {
+                    const visible = entries
+                        .filter(e => e.isIntersecting)
+                        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+                    if (visible) activate(visible.target.id);
+                }, {
+                    // Active zone begins  at TOP_OFFSET from top
+                    rootMargin: `-${TOP_OFFSET}px 0px -55% 0px`,
+                    threshold: [0, 0.25, 0.5, 0.75, 1]
+                });
+                sections.forEach(sec => io.observe(sec));
+            };
+            buildObserver();
 
-    // Smooth scroll with responsive offset
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        const target = document.querySelector(link.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.pageYOffset - getTopOffset();
-        window.scrollTo({ top, behavior: 'smooth' });
-        history.replaceState(null, '', link.getAttribute('href'));
-      });
-    });
+            // Smooth scroll with responsive offset
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (!target) return;
+                    e.preventDefault();
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - getTopOffset();
+                    window.scrollTo({ top, behavior: 'smooth' });
+                    history.replaceState(null, '', link.getAttribute('href'));
+                });
+            });
 
-    // Rebuild observer on resize to keep offsets correct
-    let resizeTO;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTO);
-      resizeTO = setTimeout(buildObserver, 150);
-    });
-  })();
-</script>
+            // Rebuild observer on resize to keep offsets correct
+            let resizeTO;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTO);
+                resizeTO = setTimeout(buildObserver, 150);
+            });
+        })();
+    </script>
 
 
     <style>
@@ -327,28 +340,110 @@
         }
 
 
-.table tbody td {
-    border: 1px solid #d8d8d8;
-    vertical-align: top;
-    padding: 1em;
-    line-height: 22px;
-}
+        .table tbody td {
+            vertical-align: top;
+            padding: 1em;
+            line-height: 22px;
+        }
 
         table th {
-    background: #001d56!important;
-    color: #fff!important;
-}
+            background: #17486b !important;
+            color: #fff !important;
+        }
 
 
-/* Put near your other policy styles */
-@media (min-width: 1024px) {
-  .policy-content section { scroll-margin-top: 300px; }
-}
-@media (max-width: 1023px) {
-  .policy-content section { scroll-margin-top: 80px; }
-}
+        /* Put near your other policy styles */
+        @media (min-width: 1024px) {
+            .policy-content section {
+                scroll-margin-top: 300px;
+            }
+        }
 
+        @media (max-width: 1023px) {
+            .policy-content section {
+                scroll-margin-top: 80px;
+            }
+        }
 
+        /* ===========================
+   Privacy Policy Table Styles
+=========================== */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: inherit;
+            font-size: 16px;
+            color: #2a3a4a;
+            margin: 24px 0;
+        }
+
+        .table th,
+        .table td {
+            padding: 14px 18px;
+            vertical-align: top;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .table thead th {
+            background-color: #f7fafc;
+            color: #0e2235;
+            font-weight: 600;
+            border-bottom: 2px solid #e1e7ed;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #fafbfd;
+            /* subtle zebra stripe */
+        }
+
+        .table tbody tr:hover {
+            background-color: #f2f7fb;
+            /* light hover effect */
+            transition: background 0.3s ease;
+        }
+
+        .table.border,
+        .table.table-bordered {
+            border: 1px solid #e1e7ed;
+        }
+
+        .table.border th,
+        .table.border td {
+            border: 1px solid #e1e7ed;
+        }
+
+        /* For smaller screens */
+        @media (max-width: 768px) {
+
+            .table th,
+            .table td {
+                padding: 10px 12px;
+                font-size: 15px;
+            }
+
+            .table {
+                display: block;
+                overflow-x: auto;
+                border-radius: 6px;
+            }
+
+            .policy-tab-wrapper {
+                display: block !important;
+            }
+        }
+
+        .navbar {
+            padding: 12px 2em;
+            background: rgba(6, 62, 99, 0.95);
+            z-index: 9999;
+            position: fixed;
+            right: 0;
+        }
+
+        .policy-tab-wrapper {
+            margin-top: 5em;
+        }
     </style>
 
 
@@ -499,63 +594,73 @@
                             basis’ for processing such data are set out in the table below. The law specifies certain
                             ‘lawful bases’ for which we are allowed to use your personal data.
                         </p>
+                        <div class="table-wrapper">
 
-                        <table class="table table-striped border table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Purpose </th>
-                                    <th>Lawful basis for Processing </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>To correspond with you. </td>
-                                    <td>Our legitimate interests in responding to your enquiry, contacting you in
-                                        relation to
-                                        the
-                                        services you provide or otherwise communicating with you in the course of our
-                                        business.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>To undertake business development and marketing activities in relation to making
-                                        suggestions
-                                        and
-                                        recommendations to you about products or services that may be of interest to
-                                        you. </td>
-                                    <td>Our legitimate interests in promoting our products and services and growing our
-                                        business.
-                                        Individuals can opt-out of receiving such messages at any time by contacting
-                                        support(at)TruBoardPartners(dot)com. </td>
-                                </tr>
-                                <tr>
-                                    <td>Corresponding with third parties such as service providers, legal advisors and
-                                        regulatory
-                                        authorities to comply with any legal obligation imposed on us or in order to
-                                        pursue our
-                                        legitimate business interests.</td>
-                                    <td>Compliance with applicable legal obligations. Our legitimate interests are in
-                                        conducting
-                                        our
-                                        business in a proper manner. </td>
-                                </tr>
-                                <tr>
-                                    <td>To maintain our records. </td>
-                                    <td>Our legitimate interests in conducting our business in a proper manner. </td>
-                                </tr>
-                                <tr>
-                                    <td>To administer and maintain our website we may record and monitor your use of our
-                                        website
-                                        which
-                                        may include analysing your use of our website. </td>
-                                    <td>Our legitimate interests in studying how our services are used, keeping our
-                                        website
-                                        updated
-                                        and
-                                        relevant, to develop our business and inform our marketing strategy. </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <table class="table table-striped border table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Purpose </th>
+                                        <th>Lawful basis for Processing </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>To correspond with you. </td>
+                                        <td>Our legitimate interests in responding to your enquiry, contacting you in
+                                            relation to
+                                            the
+                                            services you provide or otherwise communicating with you in the course of
+                                            our
+                                            business.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>To undertake business development and marketing activities in relation to
+                                            making
+                                            suggestions
+                                            and
+                                            recommendations to you about products or services that may be of interest to
+                                            you. </td>
+                                        <td>Our legitimate interests in promoting our products and services and growing
+                                            our
+                                            business.
+                                            Individuals can opt-out of receiving such messages at any time by contacting
+                                            support(at)TruBoardPartners(dot)com. </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Corresponding with third parties such as service providers, legal advisors
+                                            and
+                                            regulatory
+                                            authorities to comply with any legal obligation imposed on us or in order to
+                                            pursue our
+                                            legitimate business interests.</td>
+                                        <td>Compliance with applicable legal obligations. Our legitimate interests are
+                                            in
+                                            conducting
+                                            our
+                                            business in a proper manner. </td>
+                                    </tr>
+                                    <tr>
+                                        <td>To maintain our records. </td>
+                                        <td>Our legitimate interests in conducting our business in a proper manner.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>To administer and maintain our website we may record and monitor your use of
+                                            our
+                                            website
+                                            which
+                                            may include analysing your use of our website. </td>
+                                        <td>Our legitimate interests in studying how our services are used, keeping our
+                                            website
+                                            updated
+                                            and
+                                            relevant, to develop our business and inform our marketing strategy. </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
 
                         <p data-aos="fade-up" class="aos-init aos-animate">In addition to the uses above, please note
                             that we may also process your information
