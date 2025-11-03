@@ -146,13 +146,13 @@ p {
 
 .feature-card-img-wrapper svg {
     height: 70px;
-    cursor: pointer!important;
-    pointer-events: all!important;
+    cursor: pointer !important;
+    pointer-events: all !important;
 
 }
 
 .feature-card-img-wrapper svg path {
-    fill: #00ad6f!important;
+    fill: #00ad6f !important;
 }
 
 .feature-card-img-wrapper {
@@ -543,18 +543,18 @@ p.section-header-description.primary-text-color {
 
 @media only screen and (min-width: 1024px) {
     .swiper-pagination {
-        display: none!important;
+        display: none !important;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .who-we-work-with-section .section-header-title {
-        font-size: 24px!important;
+        font-size: 24px !important;
     }
 
     .who-we-work-with-swiper-wrapper {
-        margin-top: 0%!important;
-        padding-top: 0%!important;
+        margin-top: 0% !important;
+        padding-top: 0% !important;
     }
 }
 
@@ -587,13 +587,18 @@ p.section-header-description.primary-text-color {
     height: 220px;
 }
 
+.h300 {
+    height: auto !important;
+    margin: 2em 1em !important;
+}
+
 .who-we-work-with-swiper-card svg {
     height: 70px;
-    fill: #00AD6F!important;
+    fill: #00AD6F !important;
 }
 
 .who-we-work-with-swiper-card svg:hover {
-    fill: #00ad6f!important;
+    fill: #00ad6f !important;
 }
 
 .who-we-work-with-swiper-card .icon-wrapper {
@@ -602,7 +607,7 @@ p.section-header-description.primary-text-color {
 
 .who-we-work-with-swiper-wrapper {
     padding: 1em 0;
-    margin: 1em 0 ;
+    margin: 1em 0;
 }
 
 .swiper-pagination {
@@ -610,24 +615,24 @@ p.section-header-description.primary-text-color {
     margin: 1em;
 }
 
-.who-we-work-with-swiper-button-next, 
+.who-we-work-with-swiper-button-next,
 .who-we-work-with-swiper-button-prev {
     /* position: static!important; */
-    top: var(--swiper-navigation-top-offset,45%)!important;
+    top: var(--swiper-navigation-top-offset, 45%) !important;
 
 }
 
-.who-we-work-with-swiper-button-next:after, 
+.who-we-work-with-swiper-button-next:after,
 .who-we-work-with-swiper-button-prev:after {
-    font-family: swiper-icons!important;
-    font-size: 14px!important;
-    text-transform: none!important;
+    font-family: swiper-icons !important;
+    font-size: 14px !important;
+    text-transform: none !important;
     letter-spacing: 0;
     font-variant: initial;
     line-height: 1;
     padding: 12px;
     background: #019eca;
-    color: #0b3041!important;
+    color: #0b3041 !important;
     border-radius: 2px;
     outline: none;
     display: none;
@@ -642,7 +647,7 @@ p.section-header-description.primary-text-color {
 }
 
 .who-we-work-with-swiper-wrapper {
-    padding: 0 3em!important;
+    padding: 0 3em !important;
     margin: 2em auto;
 }
 
@@ -650,36 +655,37 @@ p.section-header-description.primary-text-color {
     position: relative;
 }
 
-@media screen and (min-width: 1024px)  {
+@media screen and (min-width: 1024px) {
     .trusted-by-section .section-header-title {
         max-width: 928px;
-        font-size: 24px!important;
+        font-size: 24px !important;
     }
 }
 
 @media screen and (min-width: 1224px) {
-    
+
     .who-we-work-with-swiper-button-prev,
     .who-we-work-with-swiper-button-next {
-        display: none!important;
+        display: none !important;
     }
 }
 
 @media screen and (max-width: 1172px) {
     .who-we-work-with-swiper {
-    max-width: auto!important;
-    margin: auto;
-}
+        max-width: auto !important;
+        margin: auto;
+    }
 
 }
+
 .our-track-record-section-mobile {
-    display: none!important;
+    display: none !important;
 }
 
 @media screen and (max-width: 768px) {
 
     .our-track-record-section-mobile {
-        display: block!important;
+        display: block !important;
     }
 
     .product-slider-wrapper {
@@ -783,15 +789,15 @@ p.section-header-description.primary-text-color {
     }
 
     .who-we-work-with-swiper-wrapper {
-        padding: 1em 1em!important;
-        width: auto!important;
+        padding: 1em 1em !important;
+        width: auto !important;
         margin: 2em auto;
     }
 
 
     .who-we-work-with-swiper-button-prev,
     .who-we-work-with-swiper-button-next {
-        display: none!important;
+        display: none !important;
     }
 
     .trusted-by-section .section-header-title {
@@ -800,15 +806,17 @@ p.section-header-description.primary-text-color {
         text-align: center;
         margin: 1em 0;
     }
+
     .service-section {
-        margin-top: 0%!important;
+        margin-top: 0% !important;
     }
+
     .slider-section {
-        margin-bottom: 0%!important;
+        margin-bottom: 0% !important;
     }
 
     .our-track-record-section-desktop {
-        display: none!important;
+        display: none !important;
     }
 
     .our-track-record-section {
@@ -819,24 +827,24 @@ p.section-header-description.primary-text-color {
         color: #ffff;
         padding: 30px 50px;
         padding-top: 2em;
-        position: static!important;
+        position: static !important;
         top: auto;
-        left:auto!important ;
-        transform: none!important;
-        right: auto!important;
-        max-width: 90%!important;
-        margin: auto!important;
-        height: fit-content!important;
-    } 
+        left: auto !important;
+        transform: none !important;
+        right: auto !important;
+        max-width: 90% !important;
+        margin: auto !important;
+        height: fit-content !important;
+    }
 
     .trusted-by-section {
-        margin-top: 1em!important;
+        margin-top: 1em !important;
     }
 }
 
 
-.our-impact-title strong{
-    font-family: "avanir-bold"!important;
+.our-impact-title strong {
+    font-family: "avanir-bold" !important;
     font-size: 14px;
 }
 
@@ -848,12 +856,12 @@ p.section-header-description.primary-text-color {
 
 .record-grid-item .number {
     margin-bottom: 12px;
-   
+
 }
 
 .tab-content-wrapper.aos-init.aos-animate {
-    height: auto!important;
-    width: 100%!important;
+    height: auto !important;
+    width: 100% !important;
 }
 
 .service-section .section-header {
@@ -862,16 +870,16 @@ p.section-header-description.primary-text-color {
 
 
 .feature-card-img-wrapper:hover .cls-1 {
-  opacity: 100!important;
+    opacity: 100 !important;
 }
 
 .who-we-work-with-swiper-card:hover .cls-1 {
-    transition: 0.5s!important;
-  opacity: 100!important;
+    transition: 0.5s !important;
+    opacity: 100 !important;
 }
 
-.who-we-work-with-swiper-card  svg{
-    transition: .3s!important;
+.who-we-work-with-swiper-card svg {
+    transition: .3s !important;
 }
 
 .who-we-work-with-swiper-card:hover {
@@ -881,42 +889,42 @@ p.section-header-description.primary-text-color {
 
 .feature-card:hover .cls-1 {
     transition: .3s;
-  opacity: 100!important;
+    opacity: 100 !important;
 }
 
-  .trusted-by-section .section-header-title {
-        font-size: 16px;
-        text-transform: capitalize;
-        text-align: center;
-        /* margin: 1em 0; */
-    }
+.trusted-by-section .section-header-title {
+    font-size: 16px;
+    text-transform: capitalize;
+    text-align: center;
+    /* margin: 1em 0; */
+}
 
-    .section-header-title {
-    font-size: 24px!important;
+.section-header-title {
+    font-size: 24px !important;
     color: #063e63;
     margin: auto;
     text-align: center;
 }
 
 .hero-section-mobile {
-    display: none!important;
+    display: none !important;
 }
 
 @media screen and (max-width: 600px) {
     .hero-section .content-info-wrapper {
-        position: static!important;
+        position: static !important;
     }
 
     .hero-section .content-info {
-        margin-bottom: 0px!important;
+        margin-bottom: 0px !important;
     }
 
     .hero-section-desktop {
-        display: none!important;
+        display: none !important;
     }
 
     .hero-section-mobile {
-        padding: 8px!important;
+        padding: 8px !important;
     }
 
     .hero-section-mobile .container {
@@ -924,7 +932,7 @@ p.section-header-description.primary-text-color {
     }
 
     .hero-section-mobile h1 {
-        color: #063e63!important;
+        color: #063e63 !important;
     }
 
     /* .hero-section-video-wrapper {
@@ -934,13 +942,15 @@ p.section-header-description.primary-text-color {
     .hero-section-video-wrapper {
         overflow: hidden;
     }
+
     .hero-email-capture-wrapper button {
         font-size: 14px;
-        font-weight: 500!important;
+        font-weight: 500 !important;
     }
+
     .hero-section-mobile {
-    display: block!important;
-}
+        display: block !important;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -954,12 +964,12 @@ p.section-header-description.primary-text-color {
     }
 
     .trusted-by-section .section-header-title {
-        font-size: 16px!important;
-        line-height: 1.5!important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
     }
 
     .feature-cards-swiper .feature-card-caption-item-description {
-        padding: 0 2em!important;
+        padding: 0 2em !important;
     }
 }
 
@@ -969,7 +979,7 @@ p.section-header-description.primary-text-color {
     }
 
     .trusted-by-section .section-header-title {
-        font-size: 14px!important;
+        font-size: 14px !important;
     }
 
     .product-slider-wrapper .section-header-description {
@@ -980,6 +990,11 @@ p.section-header-description.primary-text-color {
 
     .who-we-work-with-swiper-card {
         height: 250px;
+    }
+
+    .awards-reco-swiper-button-next,
+    .awards-reco-swiper-button-prev {
+        display: none !important;
     }
 }
 
