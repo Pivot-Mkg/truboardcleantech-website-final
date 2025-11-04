@@ -2095,6 +2095,19 @@
 
         <div class="footer-copyright">
             <div class="col-left">
+                 <a href="privacy-policy.html" class="footer-cta">
+                    Privacy policy
+                </a>
+            </div>
+            <div class="col-right">
+                <a href="#" class="footer-cta" style="display: none;">
+                    Privacy policy
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="col-left">
                 <p class="footer-primary-text">
                     &copy; All Rights Reserved by TruBoard Cleantech Private Limited
                 </p>
@@ -2321,7 +2334,11 @@
         const awards_reco_swiper = new Swiper('.awards-reco-swiper', {
             // Optional parameters
             // direction: 'vertical',
-            loop: false,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: true,
+            },
             breakpoints: {
                 // when window width is >= 320px
                 320: {
